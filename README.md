@@ -8,9 +8,13 @@ INSTRUCTIONS:
 1. Update the input_data.py with the information about databases:
 
 db_name - name of the database
+
 db_user - database username (used for authentication)
+
 db_password = database password used to authenticate
+
 db_host - database host address (defaults to UNIX socket if not provided)
+
 db_port - connection port number (defaults to 5432 if not provided)
 
 db_sql_query - sql query for each database
