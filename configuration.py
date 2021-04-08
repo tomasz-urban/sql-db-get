@@ -8,7 +8,7 @@ def db1_configuration():
     conn = psycopg2.connect(database=inp.db1_name, user=inp.db1_user, password=inp.db1_password,
                             host=inp.db1_host, port=inp.db1_port)
     sql_query = pd.read_sql_query(inp.db1_sql_query, conn)
-    df_1 = pd.DataFrame(sql_query, columns=["emp_no", "title"])
+    df_1 = pd.DataFrame(sql_query)
     return df_1
 
 
@@ -16,7 +16,7 @@ def db2_configuration():
     conn = psycopg2.connect(database=inp.db2_name, user=inp.db2_user, password=inp.db2_password,
                             host=inp.db2_host, port=inp.db2_port)
     sql_query = pd.read_sql_query(inp.db2_sql_query, conn)
-    df_2 = pd.DataFrame(sql_query, columns=["emp_no", "salary"])
+    df_2 = pd.DataFrame(sql_query)
     return df_2
 
 
