@@ -21,13 +21,13 @@ def db2_configuration():
 
 
 def merge_data(df_1, df_2):
-    merge_df = pd.merge(df_1[["emp_no", "title"]], df_2[["emp_no", "salary"]], on="emp_no")
+    merge_df = pd.merge(df_1, df_2)
     df_3 = pd.DataFrame(merge_df)
     return df_3
 
 
 def result_query(df_3):
-    output_data = df_3.query("emp_no == 10001" or "emp_no == 10002")
+    output_data = df_3.query(inp.output_query)
     return output_data
 
 
