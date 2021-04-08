@@ -6,18 +6,18 @@ The aim of this project is to get the data from two databases located on two dif
 
 INSTRUCTIONS:
 
-1. Update the input_data.py with the information about databases:
+1. Update the `input_data.py` with the information about databases:
 
-* db_name - name of the database
-* db_user - database username (used for authentication)
-* db_password = database password used to authenticate
-* db_host - database host address (defaults to UNIX socket if not provided)
-* db_port - connection port number (defaults to 5432 if not provided)
+    * db_name - name of the database
+    * db_user - database username (used for authentication)
+    * db_password = database password used to authenticate
+    * db_host - database host address (defaults to UNIX socket if not provided)
+    * db_port - connection port number (defaults to 5432 if not provided)
 
-* output_query - to get the needed information from merged DataFrame
+    * output_query - to get the needed information from merged DataFrame
 
-* db_sql_query - sql query for each database
+    * db_sql_query - sql query for each database
 
-* file_path - the destination folder
+    * file_path - the destination folder
 
 2. Run `sql_db_get.py` file to execute script
