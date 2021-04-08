@@ -6,7 +6,7 @@ The aim of this project is to get the data from two databases located on two dif
 
 INSTRUCTIONS:
 
-1. Update the `input_data.py` with the information about databases:
+1. Update the `configuration.py` with the information about databases:
 
     * db_name - name of the database
     * db_user - database username (used for authentication)
