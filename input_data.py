@@ -27,6 +27,10 @@ db2_sql_query = """
                 WHERE emp_no BETWEEN 10001 AND 10004
       """
 
+# Output query - to get the needed information from merged DataFrame (sample query)
+
+output_query = "emp_no == 10001"
+
 # Destination folder info:
 
 file_path = ""
