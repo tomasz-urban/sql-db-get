@@ -1,39 +1,39 @@
-import input_data as inp
-import pandas as pd
-import psycopg2
-from datetime import datetime
+# First database info:
+
+db1_name = "db1 name"  # the database name
+db1_user = "db1 user"  # the database username
+db1_password = "password"  # the database password
+db1_host = "host"  # the database host
+db1_port = "port"  # the default value is 5432
+
+# Sample query
+db1_sql_query = """
+         SELECT emp_no, title FROM titles
+                WHERE emp_no BETWEEN 10001 AND 10004  
+      """
 
 
-def db1_configuration():
-    conn = psycopg2.connect(database=inp.db1_name, user=inp.db1_user, password=inp.db1_password,
-                            host=inp.db1_host, port=inp.db1_port)
-    sql_query = pd.read_sql_query(inp.db1_sql_query, conn)
-    df_1 = pd.DataFrame(sql_query)
-    return df_1
+# Second database info:
+
+db2_name = "db2 name"  # the database name
+db2_user = "db2 user"  # the database username
+db2_password = "password"  # the database password
+db2_host = "host"  # the database host
+db2_port = "port"  # the default value is 5432
+
+# Sample query
+db2_sql_query = """
+         SELECT emp_no, salary FROM salaries
+                WHERE emp_no BETWEEN 10001 AND 10004
+      """
+
+# Output query - to get the needed information from merged DataFrame (sample query)
+
+output_query = "emp_no == 10001"
+
+# Destination folder info:
+
+file_path = ""
 
 
-def db2_configuration():
-    conn = psycopg2.connect(database=inp.db2_name, user=inp.db2_user, password=inp.db2_password,
-                            host=inp.db2_host, port=inp.db2_port)
-    sql_query = pd.read_sql_query(inp.db2_sql_query, conn)
-    df_2 = pd.DataFrame(sql_query)
-    return df_2
-
-
-def merge_data(df_1, df_2):
-    merge_df = pd.merge(df_1, df_2)
-    df_3 = pd.DataFrame(merge_df)
-    return df_3
-
-
-def result_query(df_3):
-    output_data = df_3.query(inp.output_query)
-    return output_data
-
-
-def save_file(output_df):
-    date = datetime.now().strftime("%Y-%m-%d_%I-%M-%S_%p")
-    file_path = inp.file_path
-    saved_file = output_df.to_csv(f'{file_path}{date}.csv')
-    return saved_file
 
