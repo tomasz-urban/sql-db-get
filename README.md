@@ -1,15 +1,18 @@
-# sql-db-get
-Getting data from two databases on different servers using Python and SQL statements
+# sql-db-get - Getting data from two databases on different servers using Python and SQL statements
 
+The aim of this project is to get the data from two databases located on two different servers. An output is a CSV file with the information that joins the data from those databases.
+That information will be gathered periodically using time schedule. Files will be stored in the format of: YYYY-MM-DD_HH-MM-SS_(AM or PM).csv
 
-#################################################################################################
-NOTE: This project is still in progress !! If You want to see the final version follow my Github!
-For now all the code will be written in an unstructured way, just to get the program running. At 
-the end I will add some structure to this project and divide it to seperate files.
-#################################################################################################
+INSTRUCTIONS:
 
+1. Update the input_data.py with the information about databases:
 
-The aim of this project is to get data from two databases located on two different servers. As an output we get a CSV file with the information that joins the data from those databases.
-That information will be gathered periodically and will be used to perform some kind of action.
+db_name - name of the database
+db_user - database username (used for authentication)
+db_password = database password used to authenticate
+db_host - database host address (defaults to UNIX socket if not provided)
+db_port - connection port number (defaults to 5432 if not provided)
 
-More details, the kind of output data, the kind of action, will be added with the final version.
+db_sql_query - sql query for each database
+
+file_path - the destination folder
