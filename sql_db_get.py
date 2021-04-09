@@ -4,7 +4,7 @@ import data_service as ds
 import file_service as fs
 
 
-def config():
+def query_setup():
     df_1 = ds.db1_query()
     df_2 = ds.db2_query()
     df_3 = ds.merge_data(df_1, df_2)
@@ -13,8 +13,7 @@ def config():
 
 
 def scheduler():
-    schedule.every().day.at("10:00").do(config)
-
+    schedule.every().day.at("10:00").do(query_setup)
 
     while True:
         schedule.run_pending()
